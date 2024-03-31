@@ -10,7 +10,9 @@ type Props = {
 };
 
 const queryClient = new QueryClient({
-  defaultOptions: { queries: { retry: false } },
+  defaultOptions: {
+    queries: { retry: false, staleTime: 3600000, gcTime: 7200000 },
+  },
 });
 
 const KlineCandlestickChartWrapper: React.FC<Props> = ({

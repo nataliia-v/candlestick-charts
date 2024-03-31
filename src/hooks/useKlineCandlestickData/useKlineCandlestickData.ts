@@ -1,4 +1,4 @@
-import { useQuery } from '@tanstack/react-query';
+import { useQuery, keepPreviousData } from '@tanstack/react-query';
 import { DateTime } from 'luxon';
 import { ApiProvider } from '@/types/ApiProvider';
 import KlineCandlestickAPIContext from '@/utils/KlineCandlestickAPI/KlineCandlestickAPIContext';
@@ -30,6 +30,7 @@ const useKlineCandlestickData = ({
       'candlesticksSeries',
     ],
     queryFn: async () => {
+      // Strategy pattern
       let context: KlineCandlestickAPIContext;
 
       if (apiProvider === ApiProvider.Binance) {
@@ -41,9 +42,8 @@ const useKlineCandlestickData = ({
       return context.execute(pair, interval, startTime, endTime);
     },
     enabled: true,
+    placeholderData: keepPreviousData,
   });
-
-  console.log('klinesQuery', klinesQuery);
 
   return {
     isLoading: klinesQuery.isLoading,

@@ -23,19 +23,13 @@ class KlineKandlestickBinance implements CandlestickStrategy {
       throw new Error('Symbol not found');
     }
 
-    const data = await getBinanceKlineCandlestickData({
+    return getBinanceKlineCandlestickData({
       queryParams: {
         symbol: symbol.symbol,
         interval,
         startTime: String(startTime.toMillis()),
         endTime: String(endTime.toMillis()),
       },
-    });
-
-    console.log('data', data);
-
-    return data.map(it => {
-      return [it[0], it[1], it[2], it[3], it[4]];
     });
   }
 }

@@ -40,21 +40,18 @@ export const KlineCandlestickChart: React.FC<Props> = ({
   });
   const chartRef = useRef<ApexCharts>();
 
-  console.log('KlineCandlestickChart - isLoading', isLoading);
-
   useEffect(() => {
     if (isLoading || !klines) {
       return;
     }
 
-    const chart = new ApexCharts(
-      document.querySelector('#chart'),
-      getChartOptions(klines),
-    );
-
     if (chartRef.current) {
       chartRef.current.updateOptions(getChartOptions(klines));
     } else {
+      const chart = new ApexCharts(
+        document.querySelector('#chart'),
+        getChartOptions(klines),
+      );
       chart.render();
       chartRef.current = chart;
     }

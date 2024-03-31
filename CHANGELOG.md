@@ -1,5 +1,11 @@
 # @nataliia-dev/candlestick-charts
 
+## 1.1.0
+
+### Minor Changes
+
+- Add buy/sell signals
+
 ## 1.0.0
 
 ### Major Changes

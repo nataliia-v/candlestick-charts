@@ -1,7 +1,7 @@
-import { BinanceKline } from './BinanceKline';
 import { BinanceExchangeInfo } from './BinanceExchangeInfo';
 import { createApiRequest } from '@/utils/createApiRequest';
 import { CandlestickInterval } from '@/types/CandlestickInterval';
+import { Kline } from '@/types/Kline';
 
 const binanceApi = createApiRequest('https://dapi.binance.com');
 export const getBinanceExchangeInfo = binanceApi<
@@ -13,7 +13,7 @@ export const getBinanceExchangeInfo = binanceApi<
 });
 
 export const getBinanceKlineCandlestickData = binanceApi<
-  BinanceKline[],
+  Kline[],
   {
     symbol: string;
     interval: CandlestickInterval;

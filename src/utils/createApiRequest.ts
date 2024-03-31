@@ -34,7 +34,9 @@ export const createApiRequest = (baseUrl: string) => {
         prependSymbolIfExists(
           '?',
           params?.queryParams
-            ? new URLSearchParams(params?.queryParams).toString()
+            ? new URLSearchParams(
+                params?.queryParams as Record<string, string>,
+              ).toString()
             : '',
         ),
       ].join('');

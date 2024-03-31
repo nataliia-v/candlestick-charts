@@ -5,8 +5,8 @@ import { ApiProvider } from '@/types/ApiProvider';
 import { KlineCandlestickChart } from '@/KlineCandlestickChart/KlineCandlestickChart';
 
 type Props = {
-  apiProvider: ApiProvider;
-  pair: string;
+  apiProvider?: ApiProvider;
+  pair?: string;
 };
 
 const queryClient = new QueryClient({

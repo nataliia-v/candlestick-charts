@@ -1,5 +1,11 @@
 # @nataliia-dev/candlestick-charts
 
+## 1.1.1
+
+### Patch Changes
+
+- Add readme details
+
 ## 1.1.0
 
 ### Minor Changes

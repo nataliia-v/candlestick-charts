@@ -1,5 +1,3 @@
-# Modern.js Package
-
 ## Introduction
 Candlestick chart that graphically represents the price moves of an asset for a given timeframe. As the name suggests, it’s made up of candlesticks, each representing the same amount of time.
 In the current implementation it is possible to filter by various intervals, e.g. 1 day, 3 days, 1 week etc
@@ -45,6 +43,8 @@ type Props = {
 
 #### Filters applied & tooltip presentation
 ![image](https://github.com/nataliia-v/candlestick-charts/assets/46761205/21709603-d753-46de-8b56-802b56390759)
+
+# Modern.js Package
 
 ## Setup
 
